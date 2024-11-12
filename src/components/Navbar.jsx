@@ -7,13 +7,13 @@ const Navbar = () => {
   return (
     <>
     <nav className="navbar">
-      <img  style={{width:"450px",marginLeft:"550px"}}src={mblogo} alt="" />
+      <img className="mblgo"  src={mblogo} alt="" />
       <ul>
       <li><Link to="/">Home</Link></li>
         <li><Link to="/movies">Movies</Link></li>
         
         <li><Link to="/ppdcast">Podcast</Link></li>
-        <li><Link to="/Trending news">Trending News</Link></li>
+        <li><Link to="/Trending news">Trending</Link></li>
         <li><Link to="/premium">premium</Link></li>
         <li><Link to="/videos">Vedios</Link></li>
         <li><Link to="/money">Money</Link></li>

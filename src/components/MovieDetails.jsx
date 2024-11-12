@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import banner from "../assets/banner.jpg"
 
 const MovieDetails = () => {
   const { id } = useParams(); 
@@ -29,7 +30,10 @@ const MovieDetails = () => {
   } = movieDetails;
 
   return (
+    <>
+    <div className="bnr"><img src={banner} alt="" /></div>
     <div className="movie-details-container">
+      
       <h1 className="movie-title">{itemTitle}</h1>
       <p className="movie-author">
         By {itemAuthor} | {publishedTime}
@@ -68,6 +72,7 @@ const MovieDetails = () => {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 

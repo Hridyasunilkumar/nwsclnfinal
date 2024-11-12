@@ -1,22 +1,82 @@
-.navbar {
-  background-color: #fdfbfb;
-  padding: 1rem;
-  color: rgb(2, 2, 2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10000;
 
+/* 
+@media (max-width: 600px) {
+
+  .navbar {
+    background-color: white;
+    padding: 1rem;
+    color: rgb(2, 2, 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    margin-left: 100px;
+  }
+} */
+
+
+/* Menu Icon */
+
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* Show menu icon in mobile view */
+  }
+
+  .nav-links {
+    display: none; /* Hide navbar links initially */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: white;
+    width: 20px;
   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #ddd;
+    padding: 1rem;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show navbar links when active */
+  }
 }
+
+
+/* oldnav is above */
+    .navbar {
+      background-color: white! important;
+      padding: 1rem;
+      color: rgb(2, 2, 2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 1650px; /* Use full width */
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      margin: 0; /* Remove margin-left */
+    }
+  
+
+ 
+  .mblgo{
+    width: 450px;
+    margin-left: 550px;
+    margin-top: 10px;
+
+  }
 /* .navbar h1{
    margin-left: 600px;
 } */
 
 .navbar ul {
+  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 2px  solid rgb(219, 218, 218);
@@ -26,18 +86,29 @@
   /* padding-left: 20px; */
  /* width: 100%; */
   margin: 0;
-  margin-top: 15px;
+  /* margin-top: 15px;
   margin-left: -10px;
   font-size: 22px;
-  padding-left: 200px;
-  padding-right: 210px;
-  cursor: pointer;
+  padding-left: 300px;
+  padding-right: 310px;
+  cursor: pointer; */
+  margin-top: 40px;
+  margin-left: -20px;
+  font-size: 21px;
+  padding-left: 225px;
+  padding-right: 147px;
 }
 
 .navbar ul li {
   display: inline;
 }
 
+.navbar ul li::after{
+  content: "|";
+ 
+  margin-left:  10px; 
+
+}
 .navbar ul li a {
  
   color: rgb(13, 12, 12);
@@ -54,11 +125,11 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  width: 900px;
-  max-width: 800px;
+  width: 1200px;
+  max-width: 1200px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-left: -800px;
+  margin-left: -300px;
   padding-bottom: 40px;
   margin-bottom: 20px;
   /* margin-bottom: -20px; */
@@ -72,9 +143,7 @@
   margin-top: 30px;
   border-radius: 10px;
 }
-.mainheading{
-  margin-right: 1350px;
-}
+
 .card-title {
   padding: 1rem;
   flex: 1;
@@ -100,22 +169,7 @@
 .itemtitlelead{
   margin-left: 220px;
 }
-.rv{
-  font-size: 20px;
-  margin-bottom: 0px;
-  text-decoration: none;
 
- 
-}
-.mv{
-  font-weight: bold;
-  font-size: 45px;
-  
-}
-.rv a{
-  text-decoration: none;
-  color: black;
-}
 .lgnbtn{
  
   width: 70px;
@@ -129,6 +183,7 @@
 .movie-details-container {
   padding: 2rem;
   line-height: 1.6;
+  margin-top: -540px;
 }
 
 .movie-title {
@@ -164,33 +219,7 @@
   margin-bottom: 1rem;
 }
 
-/* ul {
-  margin-top: 1rem;
-}
 
-ul li a {
-  color: blue;
-  text-decoration: none;
-}
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.login-form {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 5px;
-}
-.login-form .form-label {
-  font-weight: bold;
-}
-.login-form .form-control {
-  margin-bottom: 10px;
-}
-.login-form .btn {
-  font-size: 16px;
-} */
 .loginsignup {
   width: 100%;
   height: 550px; /* Ensure the container takes the full height of the viewport */
@@ -282,5 +311,134 @@ ul li a {
 
 /* Example: Hide form fields when switching to login */
 /* .login-hidden-fields input {
-  display: none;
+  display: none;
 } */
+
+/* General Responsive Styling */
+
+
+/* Movies Container */
+@media (max-width: 500px) {
+  .movies-container {
+    padding: 1rem;
+    gap: 0.5rem;
+  
+    /* moviecontent toplk */
+  }
+
+  .card {
+    flex-direction: column; /* Stack content vertically */
+    width: 100%; /* Full width */
+    margin-left: -270px; /* Reset margin */
+    padding: 1rem;
+  }
+
+  .card-image {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0;
+  }
+
+  .card-title {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+
+  .sectiontitle {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+/* Login/Signup Responsiveness */
+@media (max-width: 1200px) {
+  .loginsignup {
+    height: auto; /* Adjust height to content */
+    padding: 1rem;
+  }
+
+  .loginsignup-card {
+    width: 90%; /* Smaller width */
+    max-width: 400px; /* Adjust max-width */
+  }
+
+  .loginsignup-container {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .loginsignup-container h1 {
+    font-size: 24px; /* Smaller font size */
+  }
+
+  .loginsignup-fields input {
+    height: 40px; /* Adjust input height */
+  }
+
+  .loginsignup-container button {
+
+    height: 45px; /* Adjust button height */
+  }
+
+  .loginsignup-login {
+    font-size: 14px; /* Smaller font size */
+  }
+}
+.bnr{
+  margin-left: 1200px;
+  margin-top: 90px;
+}
+
+.movies-page {
+  display: flex;
+  gap: 20px; /* Space between content and banner */
+}
+
+.movies-content {
+  flex: 3; /* Content takes 3/4 of the width */
+}
+
+.movies-banner {
+  flex: 1; /* Banner takes 1/4 of the width */
+}
+
+.movies-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: For rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: For a shadow effect */
+}
+
+
+.banner-image{
+  margin-left: -300px;
+  margin-top: 160px;
+}
+
+.rv{
+  font-size: 20px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  
+ 
+}
+.mv{
+  font-weight: bold;
+  font-size: 45px;
+ 
+  
+}
+.rv a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.mainheading{
+  margin-right: 1350px;
+}
+
+.mainheading p{
+  width: 100%;
+}
