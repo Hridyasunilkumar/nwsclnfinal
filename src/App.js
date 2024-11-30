@@ -15,10 +15,9 @@ const App = () => {
         <Route path="/moviedetails/:id" element={<MovieDetails />} /> {/* Dynamic Route */}
         <Route path="/login" element={<Loginpage />} />
         <Route path="/reviews" element={<Movies />} />
-
-
-      </Routes>
-    </Router>
+        </Routes>
+        </Router>
+        
   );
 };
 

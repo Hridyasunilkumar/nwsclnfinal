@@ -1,0 +1,286 @@
+/* Navbar.css */
+.navbar {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ddd; /* Border for desktop view */
+  height: 140px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Align hamburger to the left and logo to the center */
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  transform: 0.3s ease;
+}
+
+.nav-links {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 25px;
+  padding-top: 10px;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  margin-left: 10px;
+}
+
+.nav-links a {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.nav-links .lgnbtn {
+  background-color: #5896d9;
+  color: white;
+  border: none;
+  padding-top: 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  height: 40px;
+  margin-top: -4px;
+  
+}
+
+.nav-links.open {
+  display: block;
+  position: absolute;
+  top: 60px; /* Adjust if you want the nav to be below the logo */
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+.nav-links li ::after{
+  content: "|";
+  margin-left: 10px;
+  color: rgb(191, 191, 191);
+ }
+ 
+/*navbar in mobile view*/
+
+  @media (max-width: 768px) {
+  .navbar-container {
+    justify-content: flex-start; /* Align hamburger to the left */
+  }
+  
+  .nav-links li ::after{
+   content: none;
+  }
+  
+  .navbar {
+    height: 90px;
+  }
+
+ 
+  
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 15px; /* Place the hamburger to the left */
+    top: 3px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Move the login button outside the ul and align it to the right end in mobile view */
+  .lgnbtn {
+    position: absolute;
+    top: 50%;
+    right: 5px; /* Position it at the right end */
+    transform: translateY(-50%);
+    background-color: #5896d9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+    z-index: 101; /* Ensure it's above the other elements */
+  }
+}
+@media(min-width: 768px) and(max-width:1024px){
+.lgnbtn {
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Position it at the right end */
+  transform: translateY(-50%);
+  background-color: #5896d9;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  height: 40px;
+  font-size: 19px;
+  font-family: "Roboto", sans-serif;
+  z-index: 101; /* Ensure it's above the other elements */
+}
+}
+/* desktop view login button on right end of screen */
+@media (min-width: 769px) {
+  .lgnbtn {
+    position: relative; /* or absolute if needed */
+    margin-left: -190px;
+    margin-top: 20px; /* adjust this as necessary */
+    background-color: #5896d9;
+    color: white;
+    border: none;
+    padding-top: 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 60px;
+    height: 35px;
+  }
+}
+
+.mblgo {
+  max-width: 100%; /* Ensure the logo scales responsively */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+/* Adjustments for mobile views */
+@media (max-width: 768px) {
+  .mblgo {
+    max-width: 270px; /* Set a maximum size for smaller screens */
+    margin-left: 55px; /* Center horizontally in smaller devices */
+    margin-right: auto;
+  }
+}
+
+
+
+
+/* smsng galxy */
+@media (max-width: 390px) {
+  .mblgo {
+    max-width: 200px; /* Set a maximum size for smaller screens */
+    margin-left: 60px; /* Center horizontally in smaller devices */
+    margin-right: auto;
+  }
+}
+
+
+
+/* Tablet view adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mblgo {
+    max-width: 280px; /* Slightly larger size for tablets */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ 
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+  .mblgo {
+    max-width: 350px; /* Larger size for desktops */
+    margin-left: 630px;
+    margin-right: auto;
+  }
+}
+
+/* Tablet view adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-container {
+    justify-content: flex-start; /* Align hamburger to the left */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 15px; /* Place the hamburger to the left */
+    top: 3px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust if you want the nav to be below the logo */
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 10px 0; /* Add spacing between menu items */
+  }
+
+  .nav-links li::after {
+    content: none; /* Remove the vertical separators in tablet view */
+  }
+
+  .lgnbtn {
+    position: absolute;
+    top: 50%;
+    right: 5px; /* Position it at the right end */
+    transform: translateY(-50%);
+    background-color: #5896d9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 40px;
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+    z-index: 101; /* Ensure it's above the other elements */
+  }
+
+  .mblgo {
+    max-width: 380px; /* Slightly larger size for tablets */
+    margin-left: 220px;
+    margin-right: auto;
+  }
+}
+
+

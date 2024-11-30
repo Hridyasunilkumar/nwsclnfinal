@@ -8,7 +8,8 @@ const Loginpage = () => {
     email: ""
   });
 
-  const changeHandler = (e) => {
+
+const changeHandler = (e) => {
     setformData({ ...formData, [e.target.name]: e.target.value });
   }
 
@@ -60,6 +61,7 @@ const Loginpage = () => {
 
   return (
     <div className="loginsignup">
+      
       <div className="loginsignup-card">
         <div className="loginsignup-container">
           <h1 style={{fontSize:30}}>{state}</h1>

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
-import bannerImage from "../assets/banner.jpg"; // Import the banner image
+import bannerImage from "../assets/banner.jpg"; 
+
+
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch("/movies.json")
+  const [isBannerLoaded, setIsBannerLoaded] = useState(false); /*to avoid unwanted banner displying*/
+   
+     useEffect(() => {
+     fetch("/movies.json")
       .then((response) => response.json())
       .then((data) => setMovies(data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => console.error("Error fetching data:", error))
+      .finally(() => setIsBannerLoaded(true)); // Set banner as loaded
   }, []);
 
   return (
@@ -22,25 +26,38 @@ const Movies = () => {
             <Link to="/movies">Reviews</Link>
           </p>
         </div>
-        {movies.map((movie, index) => (
-          <Link
-            key={index}
-            to={`/moviedetails/${movie.contentID}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Card
-              sectiontitle={movie.subSectionTitle}
-              image={movie.itemImageURL}
-              title={movie.itemTitle}
-              itemtitlelead={movie.itemTitleLead}
-            />
-          </Link>
-        ))}
-      </div>
-      <div className="banner-container">
-        <img src={bannerImage} alt="Banner" className="banner-image" />
+     
+     {/* Flex container for the cards and banner */}
+        <div className="cards-banner-container">
+          {/* Movie Cards */}
+          <div className="cards-container">
+            {movies.map((movie, index) => (
+              <Link
+                key={index}
+                to={`/moviedetails/${movie.contentID}`}
+                style={{ textDecoration: "none" }}
+              >
+                
+                <Card
+                  sectiontitle={movie.subSectionTitle}
+                  image={movie.itemImageURL}
+                  title={movie.itemTitle}
+                  itemtitlelead={movie.itemTitleLead}
+                />
+              </Link>
+            ))}
+          </div>
+
+          {/* Conditional Banner Image */}
+          {isBannerLoaded && (
+            <div className="banner-container">
+              <img src={bannerImage} alt="Banner" className="banner-image" />
+            </div>
+          )}
+        </div>
       </div>
     </div>
+    
   );
 };
 
